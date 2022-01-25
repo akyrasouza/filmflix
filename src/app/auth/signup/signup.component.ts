@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'src/app/core/models/user';
 
-import { AuthService } from './../../core/services/auth/auth.service';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
    };
    this.authService.signup(values.email,values.password,user).subscribe({
      next: (creds) => {},
-     error: (err) =>{
+     error: (err) => {
       this.snackBar.open(err.code, 'Fechar',{
         duration: 5000,
         horizontalPosition: 'end',
